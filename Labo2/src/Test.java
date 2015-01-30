@@ -61,16 +61,21 @@ class Personnage
    //////////////////////////////////////////////////////////////////////////////
    // ATTRIBUTS
    //////////////////////////////////////////////////////////////////////////////
-   String nom = new String();
-   char sexe = new char();
+   private String nom = new String();
+   private char sexe = new char();
   
    //////////////////////////////////////////////////////////////////////////////
    // CONSTRUCTEURS
    //////////////////////////////////////////////////////////////////////////////
-   public Personnage()
+   public abstract Personnage()
    {
       Setnom("");
       SetSexe('M');
+   }
+   public Personnage(String n, char s)
+   {
+      SetNom(n);
+      SetSexe(s);
    }
   
    //////////////////////////////////////////////////////////////////////////////
@@ -83,14 +88,7 @@ class Personnage
    
    private void SetSexe(char s)
    {
-      try
-      {
-         if(s == 'M' || s == 'F')
-            sexe = s;
-         else
-            throw new 
-      }
-      
+      sexe = s;
    }
    
    public String GetNom()
