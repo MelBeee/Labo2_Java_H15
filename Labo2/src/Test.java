@@ -1,5 +1,5 @@
-/**
- * Created by 201029426 on 2015-01-30.3wedd
+/*
+ Created by Melissa et Alexis
  */
 public class Test
 {
@@ -62,10 +62,63 @@ class Personnage
 
 class Sorcier extends Personnage
 {
-
+   String type_;
+   
+   public Sorcier(String nom, char sexe, String Type)
+   {
+      super(nom, sexe);
+      SetType(Type);
+   }
+   
+   final String GetType()
+   {
+      return type_;
+   }
+   private void SetType(String Type)
+   {
+      type_ = Type; 
+   }
 }
 
 class Voleur extends Personnage
 {
-
+   int nbLarcins_;
+   
+   public Voleur(String nom, char sexe, int nbre)
+   {
+      super(nom, sexe);
+      SetLarcins(nbre);
+   }
+   
+   final int GetLarcins()
+   {
+      return nbLarcins_;
+   }
+   private void SetLarcins(int Larcins)
+   {
+      nbLarcins_ = Larcins; 
+   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
