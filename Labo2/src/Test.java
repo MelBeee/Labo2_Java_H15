@@ -224,9 +224,9 @@ class Voleur extends Personnage
    public String toString()
    {
       if(GetSexe() == 'M')
-        return "Mon nom est " + GetNom() + " et je suis un voleur ayant commis " + GetLarcins() + " larcins.";
+        return "Mon nom est " + GetNom() + " et je suis un voleur ayant commis " + GetLarcins() + " larcin(s).";
       else
-        return "Mon nom est " + GetNom() + " et je suis une voleuse ayant commis " + GetLarcins() + " larcins.";
+        return "Mon nom est " + GetNom() + " et je suis une voleuse ayant commis " + GetLarcins() + " larcin(s).";
    }
 }
 
