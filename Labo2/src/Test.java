@@ -125,13 +125,13 @@ class Sorcier extends Personnage
    public Sorcier(String nom, char sexe, String Type)
    {
       super(nom, sexe);
-      setType(Type);
+      VerifierType(Type);
       setNbSorciers(1);
    }
    public Sorcier(String nom, char sexe)
    {
       super(nom, sexe);
-      setType("Inconnu");
+      VerifierType("inconnu");
       setNbSorciers(1);
    }
    
@@ -149,10 +149,27 @@ class Sorcier extends Personnage
    {
       return type_;
    }
+   
+   private void VerifierType(String Type)
+   {
+      if(Type == "air" || Type == "feu" || Type == "terre" || Type == "eau")
+      {
+         setType(Type);
+      }
+      else 
+      {
+         setType("inconnu");
+      }
+   }
+
    public void setType(String Type)
    {
-      type_ = Type; 
+       if(Type == "air" || Type == "feu" || Type == "terre" || Type == "eau" || Type == "inconnu")
+       {
+           type_ = Type;
+       }
    }
+   
    public String toString()
    {
       if(GetSexe() == 'M')
@@ -177,7 +194,7 @@ class Voleur extends Personnage
    public Voleur(String nom, char sexe)
    {
       super(nom, sexe);
-      SetLarcins(1);
+      SetLarcins(0);
       setNbVoleurs(1);
    }
    
@@ -202,7 +219,7 @@ class Voleur extends Personnage
    }
    public void incNbLarcins()
    {
-      
+      SetLarcins(GetLarcins() + 1);
    }
    public String toString()
    {
