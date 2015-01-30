@@ -53,6 +53,7 @@ public class Test
       //
       System.out.println( "\nA la fin de l'histoire il y a " +
             nbPersonnages + " personnage(s)" );
+   }
 }
 
 class Personnage
