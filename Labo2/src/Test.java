@@ -18,8 +18,7 @@ public class Test
       // décompte des personnages au début de l'histoire
       //
       nbPersonnages = Sorcier.getNbSorciers() + Voleur.getNbVoleurs();
-      System.out.println( "Au debut de l'histoire il y a " +
-            nbPersonnages + " personnage(s)\n" );
+      System.out.println( "Au debut de l'histoire il y a " + nbPersonnages + " personnage(s)\n" );
 
       //
       // création des personnages
@@ -48,6 +47,7 @@ public class Test
       for( int i = 0; i < nbPersonnages; i++ )
          System.out.println( pers[ i ] );
 
+      
       //
       // décompte des personnages à la fin de l'histoire
       //
@@ -61,32 +61,32 @@ class Personnage
    //////////////////////////////////////////////////////////////////////////////
    // ATTRIBUTS
    //////////////////////////////////////////////////////////////////////////////
-   private String nom = new String();
-   private char sexe = new char();
+   private String nom ;
+   private char sexe;
   
    //////////////////////////////////////////////////////////////////////////////
    // CONSTRUCTEURS
    //////////////////////////////////////////////////////////////////////////////
-   public abstract Personnage()
+   public  Personnage()
    {
-      Setnom("");
-      SetSexe('M');
+      setNom("");
+      setSexe('M');
    }
-   public Personnage(String n, char s)
+   public  Personnage(String n, char s)
    {
-      SetNom(n);
-      SetSexe(s);
+      setNom(n);
+      setSexe(s);
    }
   
    //////////////////////////////////////////////////////////////////////////////
    // MUTATEURS ET ACCESSEURS
    //////////////////////////////////////////////////////////////////////////////
-   private void SetNom(String n)
+   public void setNom(String n)
    {
       nom = n;
    }
    
-   private void SetSexe(char s)
+  public void setSexe(char s)
    {
       sexe = s;
    }
@@ -105,40 +105,96 @@ class Personnage
 class Sorcier extends Personnage
 {
    String type_;
+   static int nbreSorcier_;
    
    public Sorcier(String nom, char sexe, String Type)
    {
       super(nom, sexe);
-      SetType(Type);
+      setType(Type);
+      setNbSorciers(1);
+   }
+   public Sorcier(String nom, char sexe)
+   {
+      super(nom, sexe);
+      setType("Inconnu");
+      setNbSorciers(1);
    }
    
-   final String GetType()
+   public static int getNbSorciers()
+   {
+      return nbreSorcier_;
+   }
+   
+   public void setNbSorciers(int nbre)
+   {
+      nbreSorcier_ += nbre;
+   }
+   
+   public String GetType()
    {
       return type_;
    }
-   private void SetType(String Type)
+   public void setType(String Type)
    {
       type_ = Type; 
+   }
+   public String toString()
+   {
+      if(GetSexe() == 'M')
+         return "Mon nom est " + GetNom() + " et je suis un sorcier de type " + GetType();
+      else
+         return "Mon nom est " + GetNom() + " et je suis une sorciere de type " + GetType();
    }
 }
 
 class Voleur extends Personnage
 {
    int nbLarcins_;
+   static int nbreVoleur_;
    
    public Voleur(String nom, char sexe, int nbre)
    {
       super(nom, sexe);
       SetLarcins(nbre);
+      setNbVoleurs(1);
    }
    
-   final int GetLarcins()
+   public Voleur(String nom, char sexe)
+   {
+      super(nom, sexe);
+      SetLarcins(1);
+      setNbVoleurs(1);
+   }
+   
+   public static int getNbVoleurs()
+   {
+      return nbreVoleur_;
+   }
+   
+   public void setNbVoleurs(int nbre)
+   {
+      nbreVoleur_ += nbre;
+   }
+   
+   public int GetLarcins()
    {
       return nbLarcins_;
    }
-   private void SetLarcins(int Larcins)
+   public void SetLarcins(int Larcins)
    {
       nbLarcins_ = Larcins; 
+   
+   }
+   public void incNbLarcins()
+   {
+      
+   }
+   public String toString()
+   {
+      if(GetSexe() == 'M')
+        return "Mon nom est " + GetNom() + " et je suis un voleur ayant commis " + GetLarcins() + " larcins.";
+      else
+        return "Mon nom est " + GetNom() + " et je suis une voleuse ayant commis " + GetLarcins() + " larcins.";
    }
 }
 
