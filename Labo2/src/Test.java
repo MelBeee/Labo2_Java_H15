@@ -83,15 +83,15 @@ class Personnage
    //////////////////////////////////////////////////////////////////////////////
    public void setNom(String n)
    {
-      if(n.length != 0 && CheckEspace(n))
+      if(n.length() != 0 && CheckEspace(n))
          nom = n;
    }
    
-   private bool CheckEspace(String n)
+   private boolean CheckEspace(String n)
    {
-      bool resultat = false;
+      boolean resultat = false;
       
-      for(int i = 0; i < n.length; i++)
+      for(int i = 0; i < n.length(); i++)
       {
          if(n.charAt(i) != ' ')
              resultat = true;
