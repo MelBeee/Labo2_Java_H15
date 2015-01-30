@@ -83,12 +83,27 @@ class Personnage
    //////////////////////////////////////////////////////////////////////////////
    public void setNom(String n)
    {
-      nom = n;
+      if(n.length != 0 && CheckEspace(n))
+         nom = n;
+   }
+   
+   private bool CheckEspace(String n)
+   {
+      bool resultat = false;
+      
+      for(int i = 0; i < n.length; i++)
+      {
+         if(n.charAt(i) != ' ')
+             resultat = true;
+      }
+      
+      return resultat;
    }
    
   public void setSexe(char s)
    {
-      sexe = s;
+      if(s == 'M' || s == 'F')
+         sexe = s;
    }
    
    public String GetNom()
