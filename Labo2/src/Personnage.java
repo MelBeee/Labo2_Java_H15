@@ -11,11 +11,13 @@ public abstract class Personnage
    //////////////////////////////////////////////////////////////////////////////
    public  Personnage()
    {
+      // Mettre des valeurs par défaut aux attributs
       setNom("");
       setSexe('M');
    }
    public  Personnage(String n, char s)
    {
+      // Mettre les valriables passé en pramètre dans les attributs
       setNom(n);
       setSexe(s);
    }
@@ -25,36 +27,29 @@ public abstract class Personnage
    //////////////////////////////////////////////////////////////////////////////
    public void setNom(String n)
    {
-      if(n.length() != 0 && CheckEspace(n))
-         nom_ = n;
-   }
+      // Regarder si le nom est vide ou qu'il n'y a pas seulement des espaces dans la variable nom
+      String s = n.trim();
    
-   private boolean CheckEspace(String n)
-   {
-      boolean resultat = false;
-      
-      for(int i = 0; i < n.length(); i++)
-      {
-         if(n.charAt(i) != ' ')
-             resultat = true;
-      }
-      
-      return resultat;
+      if(s.length() != 0)
+         nom_ = n;
    }
    
   public void setSexe(char s)
    {
+      // Regarder si le sexe équivaut à M ou F
       if(Character.toUpperCase(s) == 'M' || Character.toUpperCase(s) == 'F')
          sexe_ = s;
    }
    
    public String GetNom()
    {
+      // Retourne le nom
       return nom_;
    }
    
    public char GetSexe()
    {
+   // Retourne le sexe
       return sexe_;
    }
 }
