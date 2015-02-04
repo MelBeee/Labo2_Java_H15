@@ -67,8 +67,10 @@ final public class Voleur extends Personnage
    {
       if(Character.toUpperCase(GetSexe()) == 'M')
         return "Mon nom est " + GetNom() + " et je suis un voleur ayant commis " + GetLarcins() + " larcin(s).";
-      else
+      else if(Character.toUpperCase(GetSexe()) == 'F')
         return "Mon nom est " + GetNom() + " et je suis une voleuse ayant commis " + GetLarcins() + " larcin(s).";
+      else // si le sexe est invalide
+        return "Mon nom est " + GetNom() + " et mon sexe est invalide mais j'ai commis " + GetLarcins() + " larcin(s).";
    }
 }
 

@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////////////////////////////////////////
+//		Classe Personnage 
+// 	 Permet à l'utilisateur d'instancier des personnages qui peuvent etre spécialisés Sorcier ou Voleur 
+//   Fait par Mélissa Boucher et Alexis Parent
+//	 30 Janvier 2015
+/////////////////////////////////////////////////////////////////////////////////////
 public abstract class Personnage
 {
    //////////////////////////////////////////////////////////////////////////////
@@ -28,9 +34,7 @@ public abstract class Personnage
    public void setNom(String n)
    {
       // Regarder si le nom est vide ou qu'il n'y a pas seulement des espaces dans la variable nom
-      String s = n.trim();
-   
-      if(s.length() != 0)
+      if(n.trim().length() != 0)
          nom_ = n;
    }
    

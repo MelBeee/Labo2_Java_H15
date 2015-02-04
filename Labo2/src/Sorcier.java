@@ -37,7 +37,7 @@ public class Sorcier extends Personnage
 /////////////////////////////////////////////////////////////////////////////////////
 // Mutateurs et Accesseurs 
 /////////////////////////////////////////////////////////////////////////////////////
-	//nombre de sorciers
+	// nombre de sorciers
    public static int getNbSorciers()
    {
       return nbreSorcier_;
@@ -55,10 +55,10 @@ public class Sorcier extends Personnage
    {
     // vérifier si le type est dans les 5 choix (air/feu/terre/eau/inconnu)
        if(	Type.toLowerCase().equals("air") 	|| 
-			Type.toLowerCase().equals("feu")  	|| 
-			Type.toLowerCase().equals("terre")  || 
-			Type.toLowerCase().equals("eau") 	|| 
-			Type.toLowerCase().equals("inconnu"))
+            Type.toLowerCase().equals("feu")  	|| 
+            Type.toLowerCase().equals("terre")  || 
+            Type.toLowerCase().equals("eau") 	|| 
+            Type.toLowerCase().equals("inconnu"))
        {
            type_ = Type; // si oui on l'attribut, si non on le laisse comme il était avant(lors d'un changement')
        }
@@ -71,7 +71,32 @@ public class Sorcier extends Personnage
    {
       if(Character.toUpperCase(GetSexe()) == 'M') 
          return "Mon nom est " + GetNom() + " et je suis un sorcier de type " + GetType();
-      else
+      else if(Character.toUpperCase(GetSexe()) == 'F')
          return "Mon nom est " + GetNom() + " et je suis une sorciere de type " + GetType();
+      else // si le sexe est invalide 
+         return "Mon nom est " + GetNom() + " et mon sexe est invalide. Je suis de type " + GetType();
    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
