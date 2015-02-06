@@ -43,7 +43,7 @@ final public class Voleur extends Personnage
    }
    public void setNbVoleurs(int nbre)
    {
-      nbreVoleur_ += nbre;
+      nbreVoleur_ += nbre; //augmente le nbre de voleurs courrant
    }
 	// nombre de larcins
    public int GetLarcins()
@@ -70,7 +70,7 @@ final public class Voleur extends Personnage
       else if(Character.toUpperCase(GetSexe()) == 'F')
         return "Mon nom est " + GetNom() + " et je suis une voleuse ayant commis " + GetLarcins() + " larcin(s).";
       else // si le sexe est invalide
-        return "Mon nom est " + GetNom() + " et mon sexe est invalide mais j'ai commis " + GetLarcins() + " larcin(s).";
+        return "Mon nom est " + GetNom() + " et un/une/autre voleur mais j'ai commis " + GetLarcins() + " larcin(s).";
    }
 }
 

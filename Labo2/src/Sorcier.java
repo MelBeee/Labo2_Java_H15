@@ -44,9 +44,9 @@ public class Sorcier extends Personnage
    }
    public void setNbSorciers(int nbre)
    {
-      nbreSorcier_ += nbre;
+      nbreSorcier_ += nbre; //augmente le nbre de sorciers courrant
    }
-    //type de sorcier
+   //type de sorcier
    public String GetType()
    {
       return type_;
@@ -74,7 +74,7 @@ public class Sorcier extends Personnage
       else if(Character.toUpperCase(GetSexe()) == 'F')
          return "Mon nom est " + GetNom() + " et je suis une sorciere de type " + GetType();
       else // si le sexe est invalide 
-         return "Mon nom est " + GetNom() + " et mon sexe est invalide. Je suis de type " + GetType();
+         return "Mon nom est " + GetNom() + " et je suis un/une/autre sorcier. Je suis de type " + GetType();
    }
 }
 
